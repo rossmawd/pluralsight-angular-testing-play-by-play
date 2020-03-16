@@ -1,7 +1,20 @@
+import { AppComponent } from "./app.component";
+
 
 describe('App Component', () => {
-  it('should 1 + 1', () => {
-    expect(1+1).toEqual(4)
+
+  let component: AppComponent; //moved the declaration here as it was 'too scoped'
+
+  beforeEach(() => { //runs before every test block
+   component = new AppComponent(); //just checking that it exists! 
+  });
+
+  it('should have a component', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should have a title of `app`', () => {
+    expect(component.title).toEqual('app');
   });
 });
 

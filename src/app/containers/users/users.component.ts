@@ -14,6 +14,7 @@ export class UsersComponent implements OnInit {
   constructor(private usersService: UserService) { }
 
   ngOnInit() {
+    //the $suffix means it's still an Observable, we haven't subscribed yet!
     this.users$ = this.usersService.getUsers();
   }
 }
